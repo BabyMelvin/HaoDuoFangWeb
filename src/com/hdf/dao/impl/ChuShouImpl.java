@@ -188,7 +188,7 @@ public class ChuShouImpl extends BaseDao implements ChuShouDao{
 		try {
 			while(rs.next()){
 				ChuShou cs=new ChuShou(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9));
-				System.out.println(cs);
+				//System.out.println(cs);
 				cslist.add(cs);
 			}
 		} catch (SQLException e) {

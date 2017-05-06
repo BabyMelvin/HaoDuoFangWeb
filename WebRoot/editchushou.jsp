@@ -2,9 +2,8 @@
 
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html:html locale="true">
+<html>
   <head>
-    <html:base />
     
     <title>editchushou.jsp</title>
 
@@ -34,4 +33,4 @@
 		<input type="submit" value="修改"><input type="reset">
 	</form>
   </body>
-</html:html>
+</html>

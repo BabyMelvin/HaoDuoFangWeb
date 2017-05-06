@@ -77,7 +77,7 @@ request.setCharacterEncoding("utf-8");
 	<div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<nav class="navbar navbar-default navbar-fixed-top" >
 				<div class="navbar-header">
 					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">好多房</a>
 				</div>
@@ -99,7 +99,7 @@ request.setCharacterEncoding("utf-8");
 								<li class="divider">
 								</li>
 								<li>
-									 <a href="./chushou.jsp">我要出售</a>
+									 <a href="./addchushou.jsp">我要出售</a>
 								</li>
 							</ul>
 						</li>
@@ -214,7 +214,7 @@ request.setCharacterEncoding("utf-8");
 		    	String CTD=year+"-"+month+"-"+date;
 		    	//out.print("<span>"+CTD+"</span>");
      	%>
-     	<p style="font-size:24px">房源信息<span class="label label-info" style="font-size:10px">好多房发布</span><span style="font-size:12px">&nbsp&nbsp&nbsp&nbsp<%=CTD %></span></p>
+     	<p style="font-size:24px">房源信息<span class="label label-info" style="font-size:10px">好多房发布</span><span style="font-size:12px">&nbsp;&nbsp;&nbsp;&nbsp;<%=CTD %></span></p>
      	<span> <a href="search.jsp">搜索</a></span>
 <div class="btn-group" data-toggle="buttons">
     <label class="btn btn-primary">
@@ -284,10 +284,10 @@ request.setCharacterEncoding("utf-8");
     		</c:forEach>
 			</table>
 			<div id="pagiDiv" align="center" style="width:1200px">
-		        <span id="spanFirst">首页</span>&nbsp;&nbsp;
-		        <span id="spanPre">上一页</span>&nbsp;&nbsp;
-		        <span id="spanNext">下一页</span>&nbsp;&nbsp;
-		        <span id="spanLast">尾页</span>&nbsp;&nbsp;
+		        <span id="spanFirst">首页</span>&nbsp;;&nbsp;;
+		        <span id="spanPre">上一页</span>&nbsp;;&nbsp;;
+		        <span id="spanNext">下一页</span>&nbsp;;&nbsp;;
+		        <span id="spanLast">尾页</span>&nbsp;;&nbsp;;
 		        第&nbsp;<span id="spanPageNum"></span>&nbsp;/&nbsp;<span id="spanTotalPage"></span>&nbsp;页
 	    	</div>
 		</div>

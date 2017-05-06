@@ -57,7 +57,7 @@ request.setCharacterEncoding("utf-8");
             currPageSpan = document.getElementById("spanPageNum");
 
             numCount = document.getElementById("blocks").rows.length - 1;       //取table的行数作为数据总数量（减去标题行1）
-            alert(numCount)
+            alert(numCount);
             columnsCounts = blockTable.rows[0].cells.length;
             pageCount = 10;
             pageNum = parseInt(numCount/pageCount);
@@ -77,7 +77,7 @@ request.setCharacterEncoding("utf-8");
 	<div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<nav class="navbar navbar-default navbar-fixed-top" >
 				<div class="navbar-header">
 					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">好多房</a>
 				</div>
@@ -99,7 +99,7 @@ request.setCharacterEncoding("utf-8");
 								<li class="divider">
 								</li>
 								<li>
-									 <a href="#">我要出售</a>
+									 <a href="./addchushou.jsp">我要出售</a>
 								</li>
 							</ul>
 						</li>
@@ -148,42 +148,45 @@ request.setCharacterEncoding("utf-8");
 	<!-- search   content -->
 	<div class="row clearfix" style="padding-top:55px">
 		<div class="col-md-12 column">
+		<form action="servletchushou?do=search" method="post">
 			<table  class="table" style="table-layout:fixed;">
 				<thead>
 				<tr>
 					<th >买房信息查询</th>
 				</tr>
 				<tr>
-					<td>小区名称&nbsp&nbsp<input type="text"/></td>
-					<td>总价范围&nbsp&nbsp<input style="text;width:40px"/>&nbsp-&nbsp<input style="text;width:40px"/></td>
-					<td>户型&nbsp&nbsp<input style="text;width:40px"/>&nbsp-&nbsp<input style="text;width:40px"/></td>
-					<td>学校称&nbsp&nbsp<input type="text"/></td>
+					<td>小区名称&nbsp;&nbsp;<input type="text" name="name"/></td>
+					<td>总价范围(万)&nbsp;&nbsp;<input style="text;width:40px" name="pricelow"/>&nbsp;&nbsp;<input style="text;width:40px" name="pricehigh"/></td>
+					<td>楼层(楼/层)&nbsp;&nbsp;<input style="text;width:40px" name="lou"/>&nbsp;/&nbsp;<input style="text;width:40px" name="ceng"/></td>
+					<td>建筑面积(㎡)&nbsp;&nbsp;<input style="text;width:40px" name="arealow"/>&nbsp;-&nbsp;<input style="text;width:40px" name="areahigh"/></td>
 				</tr>
 				<tr>
-					<td>房源类型&nbsp&nbsp<select name="fy1" id="fy1">
+					<td>车&nbsp;&nbsp;库&nbsp;&nbsp;&nbsp;&nbsp;<select name="carbarn" id="fy1">
                                             <option value="任意" selected="selected">任意</option>
-                                            <option value="住宅">住宅</option>
-                                            <option value="别墅">别墅</option>
-                                            <option value="商铺">商铺</option>
-                                            <option value="厂房">厂房</option>
-                                            <option value="其他">其他</option>
+                                            <option value="有">有</option>
+                                            <option value="无">无</option>
                                         </select></td>
-					<td>建筑面积&nbsp&nbsp<input style="text;width:40px"/>&nbsp-&nbsp<input style="text;width:40px"/></td>
-					<td rowspan="2"><button type="button" class="btn btn-default">查询</button></td>
-					<td rowspan="2">时间</td>
-				</tr>
-				<tr>
-					<td>装修等级&nbsp&nbsp<select name="zx" id="zx">
+                                        <td>装修等级&nbsp;&nbsp;&nbsp;&nbsp;<select name="decoration" id="zx">
                                             <option value="任意">任意</option>
                                             <option value="毛坯">毛坯</option>
                                             <option value="简装">简装</option>
                                             <option value="精装">精装</option>
                                             <option value="豪装">豪装</option>
                                         </select></td>
-					<td>所在楼层&nbsp&nbsp<input style="text;width:40px"/>&nbsp-&nbsp<input style="text;width:40px"/></td>
+                    <td >发布时间&nbsp;&nbsp;<select name="dateclose" id="zx">
+                                            <option value="任意">任意</option>
+                                            <option value="近一月">近一月</option>
+                                            <option value="近三月">近三月</option>
+                                            <option value="近五月">近五月</option>
+                                            <option value="近半年">近半年</option>
+                                            <option value="近一年">近一年</option>
+                                            <option value="近两年">近两年</option>
+                                        </select></td>
+					<td ><input type="submit" class="btn btn-default" value="查询"/></td>
 				</tr>
 				</thead>
 			</table>
+			</form>
 		</div>
 	</div>
 	<!-- 显示内容 -->
@@ -210,7 +213,7 @@ request.setCharacterEncoding("utf-8");
 		    	String CTD=year+"-"+month+"-"+date;
 		    	//out.print("<span>"+CTD+"</span>");
      	%>
-     	<p style="font-size:24px">房源信息<span class="label label-info" style="font-size:10px">好多房发布</span><span style="font-size:12px">&nbsp&nbsp&nbsp&nbsp<%=CTD %></span></p>
+     	<p style="font-size:24px">房源信息<span class="label label-info" style="font-size:10px">好多房发布</span><span style="font-size:12px">&nbsp;&nbsp;&nbsp;&nbsp;<%=CTD %></span></p>
      	
 <div class="btn-group" data-toggle="buttons">
     <label class="btn btn-primary">

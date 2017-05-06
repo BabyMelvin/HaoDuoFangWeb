@@ -9,9 +9,8 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html:html locale="true">
+<html>
   <head>
-    <html:base />
     
     <title>chushou.jsp</title>
 
@@ -29,15 +28,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
     <h1>发布出售页面</h1>
 	<form action="servletchushou?do=add" method="post">
-		日期：<input name="date"><br>
 		位置：<input name="name"><br>
-		楼层：<input name="floor"><br>
+		楼层：楼<input name="lou">层<input name="ceng"><br>
 		面积：<input name="area"><br>
-		装修：<input name="decoration"><br>
-		车库：<input name="carbarn"><br>
+		装修等级:<select name="decoration" id="zx">
+                                            <option value="毛坯">毛坯</option>
+                                            <option value="简装">简装</option>
+                                            <option value="精装">精装</option>
+                                            <option value="豪装">豪装</option>
+                         </select><br>
+		车库：<select name="carbarn">
+			<option value="有">有</option>
+			<option value="无">无</option>
+		</select><br>
 		总价：<input name="price"><br>
 		详细信息：<input name="detail"><br>
 		<input type="submit" value="新增"><input type="reset">
 	</form>
   </body>
-</html:html>
+</html>
